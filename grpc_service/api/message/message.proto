@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+//如果是.表示相对位置
+//option go_package = ".;message";
+option go_package = "grpc_service/api/message";
+
+message MessageResponse {
+  string responseSomething = 1;
+}
+
+message MessageRequest {
+  string saySomething = 1;
+}
+
+service HealthService {
+  rpc CheckHealth (MessageRequest) returns (MessageResponse) {}
+}
